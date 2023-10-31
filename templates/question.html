@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <style>
+      body {
+        background-color: aliceblue;
+      }
+      h1 {
+        color: blue;
+      }
+    </style>
+  </header>
+  <body>
+    <h1>{{title}}</h1>
+    {% for msg in get_flashed_messages() %}
+    <p>{{ msg }}</p>
+    {% endfor %} {{question_num}}. {{question}} <br />
+    <form action="../answer" method="POST">
+      <div>
+        <!-- <input type="radio" id="answer1" name="answer" value="foo" />
+        <label for="answer1">foo</label>
+        <input type="radio" id="answer2" name="answer" value="bar" />
+        <label for="answer2">bar</label> -->
+        {% for choice in choices %}
+        <input type="radio" id="answer" name="answer" value="{{choice}}" />
+        <label for="answer">{{choice}}</label>
+        {% endfor %}
+        <br /><br />
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>
