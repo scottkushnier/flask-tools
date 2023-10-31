@@ -17,10 +17,6 @@
     {% endfor %} {{question_num}}. {{question}} <br />
     <form action="../answer" method="POST">
       <div>
-        <!-- <input type="radio" id="answer1" name="answer" value="foo" />
-        <label for="answer1">foo</label>
-        <input type="radio" id="answer2" name="answer" value="bar" />
-        <label for="answer2">bar</label> -->
         {% for choice in choices %}
         <input type="radio" id="answer" name="answer" value="{{choice}}" />
         <label for="answer">{{choice}}</label>
